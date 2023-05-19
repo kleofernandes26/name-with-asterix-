@@ -1,0 +1,391 @@
+package alphabetPattern;
+import java.util.Scanner;
+import java.util.ArrayList;
+public class test {
+    public static void main(String[] args) {
+    	
+    	System.out.println("Please enter your full name so that the pattern can be drawn");
+		Scanner o=new Scanner(System.in);
+		String name=o.nextLine();
+		String a[]=name.split(" ");
+		System.out.println("Enter the font size");
+		int a1=5;
+		int sum=0;
+		int size=o.nextInt();
+		
+		for(String i:a) {
+			
+			if(sum>0) {
+				System.out.println();
+				System.out.println();
+				
+			}
+			char b[]=i.toCharArray();
+			sum++;
+			for(char c:b) {
+				switch(c) {
+			    case 'a':
+				for (int ro = 0; ro < size; ro++) {
+		            for (int co = 0; co <= size / 2; co++) {
+		                if ((ro == 0 && co != 0 && co != size / 2) || (co == 0 && ro != 0) || (co == size / 2 && ro != 0)||(ro==size/2))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            
+		            System.out.println();
+		            
+		        }
+				
+				
+				continue;
+			case 'b':
+				
+
+		    	for (int ro = 0; ro < size; ro++) {
+		            for (int co = 0; co <= size / 2; co++) {
+		                if (co == 0 || (ro == 0 || ro == size / 2 || ro == size - 1) && co != size / 2 || co == size / 2 && ro != 0 && ro != size / 2 && ro != size - 1)
+		                	/*if any one of these conditions are true along with------> ( || ||) &&   */
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+		    	continue;
+			case 'c':
+				for (int ro = 0; ro < size; ro++) {
+		            for (int co = 0; co < size; co++) {
+		                if ((ro == 0 || ro == size - 1) && co != 0 || co == 0 && ro != 0 && ro != size - 1)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		           
+		        }
+				continue;
+			case 'd':
+				for (int ro = 0; ro < size; ro++) {
+		            for (int co = 0; co <= size / 2; co++) {
+		                if /*co == 0 || (co == size / 2 && (ro != 0 && ro != size - 1)) || (ro == 0 || ro == size - 1) && co != size / 2)*/(co==0  ||(ro==0||ro==(a1-1))&& co!=a1/2 ||(co==a1/2 && (ro!=0 && ro!=a1-1)) )
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'e':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (row == 0 || row == size - 1 || row == size / 2 || col == 0)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'f':
+				 for (int row = 0; row < size; row++) {
+			            for (int col = 0; col < size; col++) {
+			                if (row == 0 || row == size / 2 || col == 0 )
+			                    System.out.print("*");
+			                else
+			                    System.out.print(" ");
+			            }
+			            System.out.println();
+			           
+			        }
+				 continue;
+			case 'g':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if ((row == 0 || row == size - 1) && col != 0 ||(col == 0 ) && (row != 0 && row != size - 1) ||(row == size / 2) && ( col >= size / 2)||col==size-1&& (row>=size/2&&row!=size-1))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		           
+		        }
+				continue;
+			case 'h':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || col == size - 1 || row == size / 2)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'i':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (row == 0 || row == size - 1 || col == size / 2)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'j':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (row==0||(row!=0&&row!=size-1)&&col==size/2||row==size-1&&col<size/2)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		           
+		        }
+				continue;
+			case 'k':
+				
+		    	
+		    	if(size%2!=0&&size>5) 
+		    		for (int row = 0; row < size; row++) {
+		    			int v=0;
+		    			v++;
+		                for (int col = 0; col < size; col++) {
+		                	if (col==0||(col==size-1-row-1-v)&&col!=0||col==row&&row>size/2)
+		                		System.out.print("*");
+		                    else
+		                    	System.out.print(" ");
+		                
+		                }
+		                System.out.println();
+		            
+		           
+		        
+		    	
+		    	}
+		    	else
+		    		for (int row = 0; row < size; row++) {
+		    			int j=0;
+		    			if (row>=size/2) 
+		    				j++;
+		    			
+		    			
+		    			
+		                for (int col = 0; col < size; col++) {
+		                	
+		                	if (col==0||(col==size-1-row-1)&&col!=0||col==row&&row>size/2)
+		                		System.out.print("*");
+		                    else
+		                    	System.out.print(" ");
+		                
+		                }
+		                System.out.println();
+		            
+		    		}
+		        continue;
+			case 'l':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || row == size - 1)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'm':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || col == size - 1 || (row == col && col <= size / 2) || (row + col == size - 1 && col >= size / 2))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		           
+		        }
+				continue;
+			case 'n':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || col == size - 1 || row == col)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'o':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if ((row == 0 || row == size - 1) && (col > 0 && col < size - 1) ||
+		                    (col == 0 || col == size - 1) && (row > 0 && row < size - 1))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		           
+		        }
+				continue;
+			case 'p':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || (row == 0 || row == size / 2) && col !=size - 1||(col == size - 1 && row != 0 && row <size / 2))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'q':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if ((row == 0 || row == size - 1) && (col > 0 && col < size - 1) ||
+		                    (col == 0 || col == size - 1) && (row > 0 && row < size - 1) ||
+		                    (row == col && row > size / 2))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		            
+		        }
+				continue;
+			case 'r':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || (row == 0 || row == size / 2) && col < size - 1 ||
+		                    (col == size - 1 && row != 0 && row <size / 2) ||
+		                    (row == col && col >= size / 2))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		           
+		        }
+				continue;
+			case 's':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if ((row == 0 || row == size - 1 || row == size / 2) ||
+		                    (row < size / 2 && col == 0) ||
+		                    (row > size / 2 && col == size - 1))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+				continue;
+			case 't':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (row == 0 || col == size / 2)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+				continue;
+			case 'u':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (((col == 0 || col == size - 1) && row != size - 1) ||
+		                    (row == size - 1 && col > 0 && col < size - 1))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+				continue;
+			case 'v':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if ((row == col && col <= size / 2) || (row + col == size - 1 && col >= size / 2))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+				continue;
+			case 'w':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (col == 0 || col == size-1|| (row >=size / 2 && (col == row || col == size - row-1 ))) {
+		                    System.out.print("*");
+		                } else {
+		                    System.out.print(" ");
+		                }
+		            }
+		            System.out.println();
+		        }
+		  
+				continue;
+			case 'x':
+				
+
+		        for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (row == col || row + col == size - 1)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+		        continue;
+			case 'y':
+				for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if ((col == row && col < size / 2) || (row + col == size - 1 ))
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+				continue;
+			case 'z':
+				
+
+		        for (int row = 0; row < size; row++) {
+		            for (int col = 0; col < size; col++) {
+		                if (row == 0 || row == size - 1 || row + col == size - 1)
+		                    System.out.print("*");
+		                else
+		                    System.out.print(" ");
+		            }
+		            System.out.println();
+		        }
+		        continue;
+		        
+			
+			
+			  }
+		   }
+			
+		}
+    
+    
+    }
+    	
+    	
+}

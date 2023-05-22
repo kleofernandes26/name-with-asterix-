@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class test {
     public static void main(String[] args) {
     	
-    	System.out.println("Please enter your full name so that the pattern can be drawn");
+    	System.out.println("Please enter your full name in lowercase so that the pattern can be drawn");
 		Scanner o=new Scanner(System.in);
 		String name=o.nextLine();
 		String a[]=name.split(" ");
